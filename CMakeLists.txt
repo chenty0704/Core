@@ -6,5 +6,8 @@ project(Core
         HOMEPAGE_URL "https://github.com/chenty0704/Core"
         LANGUAGES CXX)
 
+set(Boost_NO_WARN_NEW_VERSIONS ON)
+find_package(Boost REQUIRED COMPONENTS json)
+
 add_subdirectory(Headers)
 add_subdirectory(Tests)
