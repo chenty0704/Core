@@ -5,3 +5,8 @@ target_sources(Core INTERFACE
         FILES Core/System.h Core/JSON.h Core/Core.h)
 target_precompile_headers(Core INTERFACE Core/Core.h)
 target_link_libraries(Core INTERFACE Boost::headers Boost::json)
+
+install(TARGETS Core EXPORT CoreTargets
+        FILE_SET HEADERS)
+install(EXPORT CoreTargets DESTINATION lib/cmake/Core
+        NAMESPACE Core::)
